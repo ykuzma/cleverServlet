@@ -14,12 +14,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "user", urlPatterns = "/user")
 public class UserServlet extends HttpServlet {
 
-    private UserService userService;
-
-
-    public UserServlet() {
-
-    }
+    private transient UserService userService;
 
 
     @Override
