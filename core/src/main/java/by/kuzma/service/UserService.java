@@ -7,12 +7,9 @@ public interface UserService {
 
     List<User> getUsers();
 
-    User getUserById();
 
-    User create(User newUser);
+    User getUserByLogin(String login);
 
-    User update(User newUser, long id);
 
-    void delete(long id);
 
 }

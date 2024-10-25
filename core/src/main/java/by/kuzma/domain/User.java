@@ -1,9 +1,10 @@
 package by.kuzma.domain;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public class User {
-    private long id;
+    private UUID id;
     private String login;
     private String password;
     private String mail;
@@ -11,7 +12,7 @@ public class User {
     public User() {
     }
 
-    public User(long id, String login, String password, String mail) {
+    public User(UUID id, String login, String password, String mail) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -33,7 +34,7 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && Objects.equals(login, user.login) && Objects.equals(password, user.password) && Objects.equals(mail, user.mail);
+        return Objects.equals(id, user.id) && Objects.equals(login, user.login) && Objects.equals(password, user.password) && Objects.equals(mail, user.mail);
     }
 
     @Override
@@ -41,11 +42,11 @@ public class User {
         return Objects.hash(id, login, password, mail);
     }
 
-    public long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
