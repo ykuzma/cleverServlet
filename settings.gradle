@@ -1,0 +1,4 @@
+rootProject.name = 'CleverServlet'
+include 'api'
+include 'core'
+
