@@ -1,6 +1,7 @@
 package by.kuzma.servlets;
 
 import by.kuzma.service.UserService;
+import by.kuzma.service.UserServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -13,7 +14,7 @@ import java.io.IOException;
 
 @WebServlet(name = "user", urlPatterns = "/user")
 public class UserServlet extends HttpServlet {
-    private transient UserService userService;
+    private final UserService userService = UserServiceImpl.getInstance();;
 
 
     @Override
