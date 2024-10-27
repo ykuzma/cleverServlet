@@ -7,10 +7,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.UUID;
+
 
 public class UserServiceImpl implements UserService{
+    private static final UserService INSTANCE = new UserServiceImpl();
+
+    public static UserService getInstance(){
+        return INSTANCE;
+    }
 
     private final Map<String, User> userRepository = new HashMap<>();
+    {
+        userRepository.put("user", new User(UUID.randomUUID(), "user", "user", null));
+    }
 
     @Override
     public List<User> getUsers() {
