@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 public class UserServiceImpl implements UserService{
 
@@ -27,5 +28,14 @@ public class UserServiceImpl implements UserService{
                 .orElseThrow();
     }
 
-
+    @Override
+    public boolean isUser(String login, String password) {
+        User user;
+        try {
+            user = getUserByLogin(login);
+        }catch (NoSuchElementException e) {
+            return false;
+        }
+        return user.getPassword().equals(password);
+    }
 }

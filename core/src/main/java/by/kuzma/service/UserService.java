@@ -10,6 +10,8 @@ public interface UserService {
 
     User getUserByLogin(String login);
 
+    boolean isUser(String login, String password);
+
 
 
 }
