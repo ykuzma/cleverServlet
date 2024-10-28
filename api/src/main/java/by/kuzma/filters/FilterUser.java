@@ -21,7 +21,7 @@ public class FilterUser implements Filter {
         HttpSession session;
         if((session = req.getSession()) == null || session.getAttribute("userName") == null) {
             resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            resp.getWriter().print("Not auth");
+            resp.sendRedirect("/login.html");
         }else {
             chain.doFilter(request, response);
         }

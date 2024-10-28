@@ -22,6 +22,7 @@ public class UserServlet extends HttpServlet {
         HttpSession session = req.getSession();
         String userName = session.getAttribute("userName").toString();
         resp.getWriter().print(new ObjectMapper().writeValueAsString(userService.getUserByLogin(userName)));
+        resp.setContentType("application/json");
         resp.setStatus(HttpServletResponse.SC_OK);
 
 
