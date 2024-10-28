@@ -4,7 +4,6 @@ plugins {
     id 'war'
 }
 
-
 group 'org.example'
 
 repositories {
@@ -15,18 +14,6 @@ repositories {
 war {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
-
-
-/*jar {
-    archivesBaseName = 'cleverServlet'
-    getDestinationDirectory().set(file("$rootDir"))
-    manifest {
-        attributes 'Main-Class': 'main.java.ru.clevertec.check.CheckRunner'
-    }
-    from {
-        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
-    }
-}*/
 
 
 
